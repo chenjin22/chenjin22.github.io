@@ -1,20 +1,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="有空就慢慢更新叭
-" />
-    <meta name="keywords" content="" />
-    <link rel="stylesheet" href="https://chenjin22.github.io/media/css/bootstrap.min.css">
-    
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/rainbow.min.css">
-              
-    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
-    <link rel="stylesheet" href="https://chenjin22.github.io/media/css/live2d.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="https://chenjin22.github.io/media/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://chenjin22.github.io/media/css/live2d.css">
+    <meta name="description" content="一个人的小树洞" />
     <title>小陈的私属领地</title>
 </head>
+
 
 <body>
     <!-- 响应式布局，针对PC端内容显示 -->
@@ -278,87 +273,78 @@
                 </div>
                 <div id="main" class="col-xs-12 col-sm-7">
                     <link rel="stylesheet" href="https://chenjin22.github.io/media/css/font-awesome.css">
-<style>
-
-</style>
-
-<body>
-    <div class="allcontent">
-        <div class="postshow">
-            
-            <div class="postdetailimg" style="width:100%;overflow: hidden;display: none">
-                <img src="https://chenjin22.github.io/post-images/yi-xie-xiang-shuo-de-hua.jpg" class="postimage" style="cursor:auto">
-            </div>
-            <div class="postinfo">
-                <div class="postdate"><i class="fa fa-calendar"></i>2020-05-16</div>
-                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 1 min read</div>
-                <div class="posttag">
-                    
+<div id="post-container">
+    
+    <div class="postshow">
+        
+        <div id="post" style="width:100%">
+            <img src="\media\images\custom-postdefaultimage.jpg" class="postimage"
+                onclick="window.location.href= 'https://chenjin22.github.io/post/java-zhong-gui-dui-hua-kuang-de-xiang-guan-zhi-shi/';return false">
+            <div class="posttitlebox">
+                <div class="posttitlewithoutimg" onclick="window.location.href= 'https://chenjin22.github.io/post/java-zhong-gui-dui-hua-kuang-de-xiang-guan-zhi-shi/';return false">
+                    java 中GUI对话框的相关知识
                 </div>
             </div>
-            
-            <div id="texttitle" style="text-align: center">
-                <h2>一些想说的话</h2>
-            </div>
-            <div class="text ">
-                <p>有空就慢慢更新叭</p>
-
-            </div>
-            
-            <div class="prev-post">
-                上一篇
-                <a href="https://chenjin22.github.io/post/java-zhong-gui-dui-hua-kuang-de-xiang-guan-zhi-shi/">
-                    java 中GUI对话框的相关知识
-                </a>
-            </div>
-            
-            
         </div>
+        <div class="postinfo">
+            <div class="postdate"><i class="fa fa-calendar"></i>2020-05-21</div>
+            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 4 min read</div>
+            <div class="posttag">
+                
+            </div>
+        </div>
+        
     </div>
-</body>
+    
+</div>
+                    <div style="background:whitesmoke; ">
+                        <div class="pagi">
+    <ul>
+        
+        <li><a href="https://chenjin22.github.io/" style="width:100px" id="prev">上一页</a></li>
+        
+                <li><a id="page1">1</a></li>
+                <li><a id="page2" class="active">2</a></li>
+                <li><a id="page3">3</a></li>
+                
+        <li><a style="width:100px">&nbsp;</a></li>
+        
+            </ul>
+</div>
+
+<div id="pagination-prev" style="display:none"> https://chenjin22.github.io/
+</div>
+<div id="pagination-next" style="display:none"> </div>
+
+
 <script>
-    var t_img; // 定时器
-    var isLoad = true; // 控制变量
-    isImgLoad(function () {
-        // 加载完成
-        $('.postdetailimg').css("display", "block");
-    });
-    // 判断图片加载的函数
-    function isImgLoad(callback) {
-        // 注意我的图片类名都是cover，因为我只需要处理cover。其它图片可以不管。
-        // 查找所有封面图，迭代处理
-        $('.postdetailimg').each(function () {
-            // 找到为0就将isLoad设为false，并退出each
-            if (this.height === 0) {
-                isLoad = false;
-                return false;
-            }
-        });
-        // 为true，没有发现为0的。加载完毕
-        if (isLoad) {
-            clearTimeout(t_img); // 清除定时器
-            // 回调函数
-            callback();
-            // 为false，因为找到了没有加载完成的图，将调用定时器递归
+    var prevstr = document.getElementById("pagination-prev").innerHTML;
+    var nextstr = document.getElementById("pagination-next").innerHTML;
+    var page1 = document.getElementById("page1");
+    var page2 = document.getElementById("page2");
+    var page3 = document.getElementById("page3");
+    page1.innerHTML = '-';
+    page2.innerHTML = '1';
+    page3.innerHTML = '-';
+    if (prevstr.length > 5) {
+        if (prevstr.indexOf("page/") != -1) {
+            var prevnum = parseInt(prevstr.split("page/")[1]);
+            page1.innerHTML = prevnum;
+            page2.innerHTML = prevnum + 1;
         } else {
-            isLoad = true;
-            t_img = setTimeout(function () {
-                isImgLoad(callback); // 递归扫描
-            }, 500); // 我这里设置的是500毫秒就扫描一次，可以自己调整
+            page1.innerHTML = 1;
+            page2.innerHTML = 2;
         }
     }
+    if (nextstr.indexOf("page/") != -1) {
+        var nextnum = parseInt(nextstr.split("page/")[1]);
+        page3.innerHTML = nextnum;
+        page2.innerHTML = nextnum - 1;
+    }
 </script>
-                    <div name="comment" style="background: white">
-                        <div class="commentcontainer">
-                            
-                            <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
-                            
-                        </div>
                     </div>
                 </div>
-                <div class="toc-container">
-                    
-                </div>
+                <div class="col-xs-6 col-sm-2"></div>
             </div>
         </div>
         <div id="bg">
@@ -439,99 +425,123 @@
   <!-- 引入BootStrap核心js文件 -->
   <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
-        <div style="margin-top:30px"></div>
-        <link rel="stylesheet" href="https://chenjin22.github.io/media/css/font-awesome.css">
-<style>
-
-</style>
-
-<body>
-    <div class="allcontent">
-        <div class="postshow">
-            
-            <div class="postdetailimg" style="width:100%;overflow: hidden;display: none">
-                <img src="https://chenjin22.github.io/post-images/yi-xie-xiang-shuo-de-hua.jpg" class="postimage" style="cursor:auto">
-            </div>
-            <div class="postinfo">
-                <div class="postdate"><i class="fa fa-calendar"></i>2020-05-16</div>
-                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 1 min read</div>
-                <div class="posttag">
-                    
-                </div>
-            </div>
-            
-            <div id="texttitle" style="text-align: center">
-                <h2>一些想说的话</h2>
-            </div>
-            <div class="text ">
-                <p>有空就慢慢更新叭</p>
-
-            </div>
-            
-            <div class="prev-post">
-                上一篇
-                <a href="https://chenjin22.github.io/post/java-zhong-gui-dui-hua-kuang-de-xiang-guan-zhi-shi/">
-                    java 中GUI对话框的相关知识
-                </a>
-            </div>
-            
-            
-        </div>
-    </div>
-</body>
+        <!-- 移动端欢迎页 -->
+<div class="welcome">
+    <span class="mobiledescribtion"></span>
+</div>
+<div id="mobilebgurl" style="display:none">/media/images/mobilebgimg.jpg</div>
 <script>
-    var t_img; // 定时器
-    var isLoad = true; // 控制变量
-    isImgLoad(function () {
-        // 加载完成
-        $('.postdetailimg').css("display", "block");
-    });
-    // 判断图片加载的函数
-    function isImgLoad(callback) {
-        // 注意我的图片类名都是cover，因为我只需要处理cover。其它图片可以不管。
-        // 查找所有封面图，迭代处理
-        $('.postdetailimg').each(function () {
-            // 找到为0就将isLoad设为false，并退出each
-            if (this.height === 0) {
-                isLoad = false;
-                return false;
+    var welcome = $('.welcome');
+    var bgurl = document.getElementById("mobilebgurl").innerHTML;
+    for (var i = 0; i < 3; i++)
+        bgurl = bgurl.replace("\\", "/");
+    welcome.css("background", "url('" + bgurl + "')");
+    var mobiledes = document.querySelector(".mobiledescribtion");
+    var text = "一个人的小树洞";
+    // 当前显示第几个字
+    var mobilecharIndex = 1;
+    // 每个字显示间隔默认是500毫秒
+    var mobiledelta = 500;
+
+    // 记录动画执行开始时间
+    var mobilestart = null;
+    // 是否为删除动画
+    var mobileisDeleting = false;
+
+    // 动画回调函数
+    function mobileLoadDes(time) {
+        window.requestAnimationFrame(mobileLoadDes);
+        // 初始化开始时间
+        if (!mobilestart) start = time;
+        // 获取时间间隔
+        var mobileprogress = time - mobilestart;
+        // 每隔一定的时间，打印出一个新的字符
+        if (mobileprogress > mobiledelta) {
+            // 如果是打字效果
+            if (!mobileisDeleting) {
+                // 给展示文字的span新增一个字符，使用innerHTML来替换，charIndex自增1，然后返回新的字符串子串
+                mobiledes.innerHTML = "&nbsp;" + text.slice(
+                    0,
+                    ++mobilecharIndex
+                );
+                mobiledelta = 500 - Math.random() * 400;
+            } else {
+                // 如果是删除效果，则把文字一个一个减掉
+                mobiledes.innerHTML = "&nbsp;" + text.slice(
+                    0,
+                    mobilecharIndex--
+                );
             }
-        });
-        // 为true，没有发现为0的。加载完毕
-        if (isLoad) {
-            clearTimeout(t_img); // 清除定时器
-            // 回调函数
-            callback();
-            // 为false，因为找到了没有加载完成的图，将调用定时器递归
-        } else {
-            isLoad = true;
-            t_img = setTimeout(function () {
-                isImgLoad(callback); // 递归扫描
-            }, 500); // 我这里设置的是500毫秒就扫描一次，可以自己调整
+            // 把star更新为当前时间，进行下一个周期
+            mobilestart = time;
+
+            // 如果文字已经全部打印完毕
+            if (mobilecharIndex === text.length) {
+                // 下次开始删除文字
+                mobileisDeleting = true;
+                // 删除文字的间隔为200毫秒
+                mobiledelta = 100;
+                // 额外等待1.2秒后再删除
+                mobilestart = time + 1000;
+            }
+
+            // 如果文字删除完毕
+            if (mobilecharIndex < 0) {
+                mobileisDeleting = false;
+                // 额外增加200毫秒延迟
+                mobilestart = time + 200;
+            }
         }
     }
+
+    window.requestAnimationFrame(mobileLoadDes);
 </script>
-        <div name="comment" style="background: white">
-            <div class="commentcontainer">
-                
-                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+        <link rel="stylesheet" href="https://chenjin22.github.io/media/css/font-awesome.css">
+<div id="post-container">
+    
+    <div class="postshow">
+        
+        <div id="post" style="width:100%">
+            <img src="\media\images\custom-postdefaultimage.jpg" class="postimage"
+                onclick="window.location.href= 'https://chenjin22.github.io/post/java-zhong-gui-dui-hua-kuang-de-xiang-guan-zhi-shi/';return false">
+            <div class="posttitlebox">
+                <div class="posttitlewithoutimg" onclick="window.location.href= 'https://chenjin22.github.io/post/java-zhong-gui-dui-hua-kuang-de-xiang-guan-zhi-shi/';return false">
+                    java 中GUI对话框的相关知识
+                </div>
+            </div>
+        </div>
+        <div class="postinfo">
+            <div class="postdate"><i class="fa fa-calendar"></i>2020-05-21</div>
+            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 4 min read</div>
+            <div class="posttag">
                 
             </div>
         </div>
+        
     </div>
-    <div id="landlord">
-        <div class="message" style="opacity:0"></div>
-        <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
+    
+</div>
+        <div class="pagination-container">
+            
+            <a href="https://chenjin22.github.io/" class="mobile-prevpage">上一页</a>
+            
+            
+        </div>
+        <div style="margin-bottom:60px">&nbsp;</div>
     </div>
+
+<div id="landlord">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
+</div>
 </body>
-<script>
-    hljs.initHighlightingOnLoad()
-</script>
-<script src="https://chenjin22.github.io/media/js/post.js"></script>
+
+</html>
+<script src="https://chenjin22.github.io/media/js/index.js"></script>
 
 <script type="text/javascript">
     var message_Path = '/live2d/'
-    var home_Path = 'http://ericam.top/' //此处修改为你的域名，必须带斜杠
+    var home_Path = 'http://ericam.top/'  //此处修改为你的域名，必须带斜杠
 </script>
 <script type="text/javascript" src="https://chenjin22.github.io/media/live2d/js/live2d.js"></script>
 <script type="text/javascript" src="https://chenjin22.github.io/media/live2d/js/message.js"></script>
