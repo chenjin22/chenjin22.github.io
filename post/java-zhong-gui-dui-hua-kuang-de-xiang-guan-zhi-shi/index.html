@@ -35,7 +35,7 @@ modal表示对话框的模式，true为有模式(当对话框处于激活状态�
 <body>
     <div id=side>
         <div class="avatar-border">
-            <img src="https://chenjin22.github.io/images/avatar.png?v=1590036401297" class="avatar">
+            <img src="https://chenjin22.github.io/images/avatar.png?v=1590036852190" class="avatar">
         </div>
         <div class="sitename">小陈的私属领地</div>
         <span class="describtion" data-text='["一个人的小树洞"]'>&nbsp;</span>
@@ -299,7 +299,8 @@ modal表示对话框的模式，true为有模式(当对话框处于激活状态�
             <div class="text ">
                 <ol>
 <li>JDialog:   JDialog(JFrame owner,String title,boolean modal)<br>
-modal表示对话框的模式，true为有模式(当对话框处于激活状态时，只让程序响应对话框内部的事件，不能再激活它所依赖的窗口或组件，将堵塞当前线程的执行，直到当对话框消失)</li>
+modal表示对话框的模式，true为有模式(当对话框处于激活状态时，只让程序响应对话框内部的事件，不能再激活它所依赖的窗口或组件，将堵塞当前线程的执行，直到当对话框消失)<br>
+例:</li>
 </ol>
 <p>package 布局设计;<br>
 import java.awt.*;<br>
@@ -341,31 +342,34 @@ message=CLOSE;<br>
 setVisible(false);<br>
 }<br>
 });<br>
-}<br>
-@Override<br>
-public void actionPerformed(ActionEvent e) {<br>
-if(e.getSource()==yes) {<br>
-message=YES;<br>
-setVisible(false);<br>
-}<br>
-else if(e.getSource()==no) {<br>
-message=NO;<br>
-setVisible(false);<br>
-}<br>
-}<br>
-public int getMessage() {<br>
-return message;<br>
-}<br>
 }</p>
+<pre><code>public void actionPerformed(ActionEvent e) {
+	if(e.getSource()==yes) {
+		message=YES;
+		setVisible(false);
+	}
+	else if(e.getSource()==no) {
+		message=NO;
+		setVisible(false);
+	}
+}
+public int getMessage() {
+	return message;
+}
+</code></pre>
+<p>}</p>
 <p><img src="https://chenjin22.github.io/post-images/1590025088004.gif" alt="" loading="lazy"><br>
 2.输入对话框showInputDialog<br>
-String showInputDialog(Component parentComponent,Object messsage,String title,int messageType)<br>
-3. 消息对话框showMessageDialog<br>
-void showMessageDialog(Component parentComponent,String message,String title,int messageType)<br>
-4. 确认对话框showConfirmDialog<br>
-int showConfirmDialog(Component parentComponent,Object message,String title,int optionType)</p>
-<p>例：<br>
-package 布局设计;<br>
+String showInputDialog(Component parentComponent,Object messsage,String title,int messageType)</p>
+<ol>
+<li>消息对话框showMessageDialog<br>
+void showMessageDialog(Component parentComponent,String message,String title,int messageType)</li>
+<li>确认对话框showConfirmDialog<br>
+int showConfirmDialog(Component parentComponent,Object message,String title,int optionType)</li>
+</ol>
+<p>例：</p>
+<!-- more -->
+<p>package 布局设计;<br>
 import javax.swing.<em>;<br>
 import java.awt.</em>;<br>
 import java.awt.event.ActionEvent;<br>
@@ -653,7 +657,8 @@ setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);<br>
             <div class="text ">
                 <ol>
 <li>JDialog:   JDialog(JFrame owner,String title,boolean modal)<br>
-modal表示对话框的模式，true为有模式(当对话框处于激活状态时，只让程序响应对话框内部的事件，不能再激活它所依赖的窗口或组件，将堵塞当前线程的执行，直到当对话框消失)</li>
+modal表示对话框的模式，true为有模式(当对话框处于激活状态时，只让程序响应对话框内部的事件，不能再激活它所依赖的窗口或组件，将堵塞当前线程的执行，直到当对话框消失)<br>
+例:</li>
 </ol>
 <p>package 布局设计;<br>
 import java.awt.*;<br>
@@ -695,31 +700,34 @@ message=CLOSE;<br>
 setVisible(false);<br>
 }<br>
 });<br>
-}<br>
-@Override<br>
-public void actionPerformed(ActionEvent e) {<br>
-if(e.getSource()==yes) {<br>
-message=YES;<br>
-setVisible(false);<br>
-}<br>
-else if(e.getSource()==no) {<br>
-message=NO;<br>
-setVisible(false);<br>
-}<br>
-}<br>
-public int getMessage() {<br>
-return message;<br>
-}<br>
 }</p>
+<pre><code>public void actionPerformed(ActionEvent e) {
+	if(e.getSource()==yes) {
+		message=YES;
+		setVisible(false);
+	}
+	else if(e.getSource()==no) {
+		message=NO;
+		setVisible(false);
+	}
+}
+public int getMessage() {
+	return message;
+}
+</code></pre>
+<p>}</p>
 <p><img src="https://chenjin22.github.io/post-images/1590025088004.gif" alt="" loading="lazy"><br>
 2.输入对话框showInputDialog<br>
-String showInputDialog(Component parentComponent,Object messsage,String title,int messageType)<br>
-3. 消息对话框showMessageDialog<br>
-void showMessageDialog(Component parentComponent,String message,String title,int messageType)<br>
-4. 确认对话框showConfirmDialog<br>
-int showConfirmDialog(Component parentComponent,Object message,String title,int optionType)</p>
-<p>例：<br>
-package 布局设计;<br>
+String showInputDialog(Component parentComponent,Object messsage,String title,int messageType)</p>
+<ol>
+<li>消息对话框showMessageDialog<br>
+void showMessageDialog(Component parentComponent,String message,String title,int messageType)</li>
+<li>确认对话框showConfirmDialog<br>
+int showConfirmDialog(Component parentComponent,Object message,String title,int optionType)</li>
+</ol>
+<p>例：</p>
+<!-- more -->
+<p>package 布局设计;<br>
 import javax.swing.<em>;<br>
 import java.awt.</em>;<br>
 import java.awt.event.ActionEvent;<br>
