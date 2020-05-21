@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://chenjin22.github.io</id>
     <title>小陈的私属领地</title>
-    <updated>2020-05-21T04:08:48.865Z</updated>
+    <updated>2020-05-21T04:34:22.481Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://chenjin22.github.io"/>
     <link rel="self" href="https://chenjin22.github.io/atom.xml"/>
@@ -78,13 +78,11 @@ return message;<br>
 }</p>
 <p><img src="https://chenjin22.github.io/post-images/1590025088004.gif" alt="" loading="lazy"><br>
 2.输入对话框showInputDialog<br>
-String showInputDialog(Component parentComponent,Object messsage,String title,int messageType)</p>
-<ol>
-<li>消息对话框showMessageDialog<br>
-void showMessageDialog(Component parentComponent,String message,String title,int messageType)</li>
-<li>确认对话框showConfirmDialog<br>
-int showConfirmDialog(Component parentComponent,Object message,String title,int optionType)</li>
-</ol>
+String showInputDialog(Component parentComponent,Object messsage,String title,int messageType)<br>
+3. 消息对话框showMessageDialog<br>
+void showMessageDialog(Component parentComponent,String message,String title,int messageType)<br>
+4. 确认对话框showConfirmDialog<br>
+int showConfirmDialog(Component parentComponent,Object message,String title,int optionType)</p>
 <p>例：<br>
 package 布局设计;<br>
 import javax.swing.<em>;<br>
@@ -145,7 +143,7 @@ setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);<br>
         <content type="html"><![CDATA[<p>我太懒了，就直接把steam的个人简介搬过来了QAQ，有时间了，我再加点内容叭（真的好忙的）<br>
 性别 ： 男</p>
 <p>年龄 : 18</p>
-<p>当前状态 :是个大一学生啦，就读于南京某校软件工程专业 现在当然是一个菜鸟啦QAQ....会一点python和c ，现在在努力学习c++和java，未来想尝试unity和go语言  当然也欢迎大佬来和我交流交流编程。然后除了编程之外，还会一点ps，如果有需要的朋友可以找我帮忙:MaterialGirl_expression4:</p>
+<p>当前状态 :是个大一学生啦，就读于南京某校软件工程专业 现在当然是一个菜鸟啦QAQ....会一点python和c ，现在在努力学习c++和java，未来想尝试unity和go语言  当然也欢迎大佬来和我交流交流编程。然后除了编程之外，还会一点ps，如果有需要的朋友可以找我帮忙</p>
 <p>兴趣 :平常白天有空闲时间都会去学学编程的，然后我也是个足球迷，纯正的国际米兰球迷，可惜最近球赛都停了，平时不怎么追剧追番。我很喜欢听歌，写作业还是打代码的时候音乐都开着，喜欢好多好多好多歌手，中国歌手里最喜欢陈壹千 ，海外歌手最喜欢韩国的Ben啦。</p>
 <p>关于游戏和steam :我接触电脑游戏的时间比较晚，大概小学五年级家里才有了第一台电脑。入坑steam的时间也就五年，大概是初中的时候玩dota2入了steam的坑，可惜，dota2我没玩多久  。除了steam上的游戏，我玩的最多的就是lol啦，我算入坑较早的一批人，s2就入坑了，第一个玩的英雄应该是金属大师（第一次看感觉好帅QAQ）。现在lol是半弃坑状态啦，没以前那感觉啦，但是lpl还是一直看的呢，一看就是老皇杂了。</p>
 <p>最近在玩的游戏 ：最近基本就只玩彩虹六号啦，虽然一直白给，但还是坚持到70级啦，如果有不嫌弃我菜的朋友的可以一起玩:radio_head:。因为学习的问题，基本只会晚上打游戏，白天空闲时间会学java啦。 我好想玩赛博朋克，可惜跳票了，我的钱包也不够了QAQ</p>
